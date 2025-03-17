@@ -83,7 +83,7 @@ button:focus-visible {
 }
 
 .add-to-list-div {
-  display: none;
+  display: flex;
   justify-content: space-between;
   gap: 5%;
 }

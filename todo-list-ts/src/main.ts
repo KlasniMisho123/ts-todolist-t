@@ -30,15 +30,16 @@ console.log(helloSentence)
 const nameDeclarator = document.querySelector<HTMLButtonElement>('#namedeclarator')
 const nameDisplay = document.querySelector<HTMLHeadingElement>('.title-h1')
 const todoDiv = document.querySelector<HTMLDivElement>(".add-to-list-div")
+const todoListDisplay = document.querySelector<HTMLDivElement>(".list-display-div")
 const addBtn = document.querySelector<HTMLButtonElement>('#addToList')
 const newTodo = document.querySelector<HTMLInputElement>('#todoInput')
 
 
-if(nameDeclarator && nameDisplay && todoDiv) {
+if(nameDeclarator && nameDisplay && todoListDisplay) {
   nameDeclarator.addEventListener("click",() => {
     nameDisplay.innerText = helloSentence
     nameDeclarator.style.display = "none"
-    todoDiv.style.display = "flex";
+    todoListDisplay.style.display = "flex"
   })
 } else {
   console.error("Button with ID #namedeclarator not found.");
