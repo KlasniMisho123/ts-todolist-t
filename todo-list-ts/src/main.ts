@@ -1,22 +1,21 @@
 import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
 import { helloWorld } from './counter';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1 class="title-h1">Vite + TypeScript</h1>
+    <h1 class="title-h1">TodoList With TypeScript</h1>
+    <div 
+    class="add-to-list-div"> 
+      <input
+       id="todoInput" 
+       placeholder="New todo"
+      />
+      <button id="addToList"> Add </button>
+    </div>
     <div class="card">
-      <button id="namedeclarator" type="button">Hello</button>
+      <button id="namedeclarator" type="button"> Hello </button>
     </div>
     <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
     </p>
   </div>
 `
@@ -28,11 +27,14 @@ let helloSentence = helloWorld("Misho")
 console.log(helloSentence)
 const nameDeclarator = document.querySelector<HTMLButtonElement>('#namedeclarator')
 const nameDisplay = document.querySelector<HTMLHeadingElement>('.title-h1')
+const todoDiv = document.querySelector<HTMLDivElement>(".add-to-list-div")
 
 if(nameDeclarator && nameDisplay) {
   nameDeclarator.addEventListener("click",() => {
     nameDisplay.innerText = helloSentence
+    nameDeclarator.style.display = "none"
   })
 } else {
   console.error("Button with ID #namedeclarator not found.");
 }
+

@@ -9,5 +9,5 @@ export function setupCounter(element: HTMLButtonElement) {
 }
 
 export function helloWorld(name: string) {
-  return (`Hello World, I am ${name}`)
+  return (`Hello ${name}, Your Todo List`)
 }
