@@ -31,6 +31,7 @@ const nameDeclarator = document.querySelector<HTMLButtonElement>('#namedeclarato
 const nameDisplay = document.querySelector<HTMLHeadingElement>('.title-h1')
 const todoDiv = document.querySelector<HTMLDivElement>(".add-to-list-div")
 const addBtn = document.querySelector<HTMLButtonElement>('#addToList')
+const newTodo = document.querySelector<HTMLInputElement>('#todoInput')
 
 
 if(nameDeclarator && nameDisplay && todoDiv) {
@@ -44,6 +45,9 @@ if(nameDeclarator && nameDisplay && todoDiv) {
 }
 
 
+if (addBtn && newTodo) {
+  addBtn.addEventListener("click", () => handleListAddition(newTodo.innerText));
+}
 
 function handleListAddition(todo: string): void{
   // const listDisplayDiv = document.querySelector<HTMLDivElement>(".list-display-div ")
