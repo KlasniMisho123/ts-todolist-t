@@ -63,5 +63,8 @@ function handleListAddition(todo: string): void{
 
     listDisplayDiv?.appendChild(newTodoElement);
   }
+  if (newTodo) {
+    newTodo.value = ""
+  }
 }
 
