@@ -101,19 +101,31 @@ button:focus-visible {
   justify-content: center;
   gap: 10px;
   align-items: start;
-  border: solid 1px red;
+  border: solid 1px gray;
   border-radius: 8px;
   padding: 20px 25px;
   min-height: 100px;
 }
 
 .todoItem {
+  display: flex;
+  justify-content: start;
   font-size: 16px;
   color: #333;
-  margin:  0px;
-  padding: 0px;
-  border-radius: 5px;
+  width: 80%;
+  margin: 5px 0; 
+  padding: 8px; 
+  border-left: 3px solid #ccc;
+  border-radius: 3px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease, transform 0.3s ease;  
 }
+
+.todoItem:hover {
+  background-color: #f4f4f4; 
+  transform: translateX(5px);
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {

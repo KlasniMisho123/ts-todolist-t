@@ -54,8 +54,8 @@ function handleListAddition(todo: string): void{
 
   if (listDisplayDiv && todo) {
     const newTodoElement = document.createElement("p");
-    newTodoElement.innerText = todo;
-    
+    newTodoElement.innerText = 1 + " "+ todo;
+
     newTodoElement.classList.add("todoItem");
 
     listDisplayDiv?.appendChild(newTodoElement);
