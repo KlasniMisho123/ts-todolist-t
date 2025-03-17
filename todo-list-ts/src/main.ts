@@ -26,7 +26,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 let helloSentence = helloWorld("Misho")
 
-console.log(helloSentence)
 const nameDeclarator = document.querySelector<HTMLButtonElement>('#namedeclarator')
 const nameDisplay = document.querySelector<HTMLHeadingElement>('.title-h1')
 const todoDiv = document.querySelector<HTMLDivElement>(".add-to-list-div")
@@ -63,9 +62,20 @@ function handleListAddition(todo: string): void{
     newTodoElement.classList.add("todoItem");
 
     listDisplayDiv?.appendChild(newTodoElement);
+
+    newTodoElement.addEventListener("click", () => handleItemClicked(newTodoElement)); 
+
   }
   if (newTodo) {
     newTodo.value = ""
   }
 }
 
+function handleItemClicked(currentItem: any) {
+  let isCompleted = currentItem.style.textDecoration
+  if(isCompleted === "line-through") {
+    isCompleted = "none"
+  } else {
+    isCompleted = "line-through"
+  }
+}
