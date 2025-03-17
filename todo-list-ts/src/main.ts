@@ -15,8 +15,10 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <div class="card">
       <button id="namedeclarator" type="button"> Hello </button>
     </div>
-    <p class="read-the-docs">
-    </p>
+    <div class="list-display-div"> 
+      <p class="read-the-docs"> This is List </p>
+    </div> 
+    
   </div>
 `
 
@@ -28,13 +30,27 @@ console.log(helloSentence)
 const nameDeclarator = document.querySelector<HTMLButtonElement>('#namedeclarator')
 const nameDisplay = document.querySelector<HTMLHeadingElement>('.title-h1')
 const todoDiv = document.querySelector<HTMLDivElement>(".add-to-list-div")
+const addBtn = document.querySelector<HTMLButtonElement>('#addToList')
 
-if(nameDeclarator && nameDisplay) {
+
+if(nameDeclarator && nameDisplay && todoDiv) {
   nameDeclarator.addEventListener("click",() => {
     nameDisplay.innerText = helloSentence
     nameDeclarator.style.display = "none"
+    todoDiv.style.display = "flex"
   })
 } else {
   console.error("Button with ID #namedeclarator not found.");
+}
+
+
+
+function handleListAddition(todo: string): void{
+  // const listDisplayDiv = document.querySelector<HTMLDivElement>(".list-display-div ")
+
+  // if(todo) {
+  //   listDisplayDiv?.innerText = todo
+  // }
+  console.log(todo)
 }
 
