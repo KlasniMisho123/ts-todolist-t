@@ -71,11 +71,10 @@ function handleListAddition(todo: string): void{
   }
 }
 
-function handleItemClicked(currentItem: any) {
-  let isCompleted = currentItem.style.textDecoration
-  if(isCompleted === "line-through") {
-    isCompleted = "none"
+function handleItemClicked(currentItem: HTMLElement) {
+  if (currentItem.style.textDecoration === "line-through") {
+    currentItem.style.textDecoration = "none";
   } else {
-    isCompleted = "line-through"
+    currentItem.style.textDecoration = "line-through";
   }
 }
