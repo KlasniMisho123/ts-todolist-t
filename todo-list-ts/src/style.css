@@ -96,7 +96,7 @@ button:focus-visible {
 }
 
 .list-display-div {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   gap: 10px;

@@ -38,12 +38,11 @@ if(nameDeclarator && nameDisplay && todoDiv) {
   nameDeclarator.addEventListener("click",() => {
     nameDisplay.innerText = helloSentence
     nameDeclarator.style.display = "none"
-    todoDiv.style.display = "flex"
+    todoDiv.style.display = "flex";
   })
 } else {
   console.error("Button with ID #namedeclarator not found.");
 }
-
 
 if (addBtn && newTodo) {
   addBtn.addEventListener("click", () => handleListAddition(newTodo.value));
@@ -52,15 +51,16 @@ if (addBtn && newTodo) {
 function handleListAddition(todo: string): void{
   const listDisplayDiv = document.querySelector<HTMLDivElement>(".list-display-div ")
 
+  const todoItems = listDisplayDiv?.querySelectorAll(".todoItem");
+  let todoIndex: number = todoItems? todoItems.length + 1: 1;
   if (listDisplayDiv && todo) {
     const newTodoElement = document.createElement("p");
-    newTodoElement.innerText = 1 + " "+ todo;
+
+    newTodoElement.innerText = todoIndex + " " + todo;
 
     newTodoElement.classList.add("todoItem");
 
     listDisplayDiv?.appendChild(newTodoElement);
   }
-  
-  console.log(todo)
 }
 
