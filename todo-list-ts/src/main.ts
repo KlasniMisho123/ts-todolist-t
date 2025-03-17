@@ -46,15 +46,16 @@ if(nameDeclarator && nameDisplay && todoDiv) {
 
 
 if (addBtn && newTodo) {
-  addBtn.addEventListener("click", () => handleListAddition(newTodo.innerText));
+  addBtn.addEventListener("click", () => handleListAddition(newTodo.value));
 }
 
 function handleListAddition(todo: string): void{
-  // const listDisplayDiv = document.querySelector<HTMLDivElement>(".list-display-div ")
+  const listDisplayDiv = document.querySelector<HTMLDivElement>(".list-display-div ")
 
-  // if(todo) {
-  //   listDisplayDiv?.innerText = todo
-  // }
+  if(todo) {
+    listDisplayDiv?.innerText = todo
+  }
+  
   console.log(todo)
 }
 
