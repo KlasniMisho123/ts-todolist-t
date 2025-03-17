@@ -27,12 +27,13 @@ let helloSentence = helloWorld("Misho")
 
 console.log(helloSentence)
 const nameDeclarator = document.querySelector<HTMLButtonElement>('#namedeclarator')
-const nameDisplay = document.querySelector<HTMLButtonElement>('.title-h1')
+// const nameDisplay = document.querySelector<HTMLButtonElement>('.title-h1')
+const nameDisplay = document.querySelector<HTMLHeadingElement>('.title-h1')
 
-if(nameDeclarator) {
+if(nameDeclarator && nameDisplay) {
   nameDeclarator.addEventListener("click",() => {
-    nameDisplay?.innerText = helloSentence
+    nameDisplay.innerText = helloSentence
   })
 } else {
-  console.error("Button with ID #counter not found.");
+  console.error("Button with ID #namedeclarator not found.");
 }
