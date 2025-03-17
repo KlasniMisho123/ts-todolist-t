@@ -13,7 +13,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </a>
     <h1 class="title-h1">Vite + TypeScript</h1>
     <div class="card">
-      <button id="namedeclarator" type="button"></button>
+      <button id="namedeclarator" type="button">Hello</button>
     </div>
     <p class="read-the-docs">
       Click on the Vite and TypeScript logos to learn more
@@ -27,7 +27,6 @@ let helloSentence = helloWorld("Misho")
 
 console.log(helloSentence)
 const nameDeclarator = document.querySelector<HTMLButtonElement>('#namedeclarator')
-// const nameDisplay = document.querySelector<HTMLButtonElement>('.title-h1')
 const nameDisplay = document.querySelector<HTMLHeadingElement>('.title-h1')
 
 if(nameDeclarator && nameDisplay) {
