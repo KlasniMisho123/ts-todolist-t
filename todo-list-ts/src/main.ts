@@ -35,10 +35,11 @@ const addBtn = document.querySelector<HTMLButtonElement>('#addToList')
 const newTodo = document.querySelector<HTMLInputElement>('#todoInput')
 
 
-if(nameDeclarator && nameDisplay && todoListDisplay) {
+if(nameDeclarator && nameDisplay && todoListDisplay && todoDiv) {
   nameDeclarator.addEventListener("click",() => {
     nameDisplay.innerText = helloSentence
     nameDeclarator.style.display = "none"
+    todoDiv.style.display = "flex"
     todoListDisplay.style.display = "flex"
   })
 } else {
