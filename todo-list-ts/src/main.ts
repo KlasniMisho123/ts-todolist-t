@@ -16,7 +16,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <button id="namedeclarator" type="button"> Hello </button>
     </div>
     <div class="list-display-div"> 
-      <p class="read-the-docs"> This is List </p>
+      
     </div> 
     
   </div>
@@ -52,8 +52,13 @@ if (addBtn && newTodo) {
 function handleListAddition(todo: string): void{
   const listDisplayDiv = document.querySelector<HTMLDivElement>(".list-display-div ")
 
-  if(todo) {
-    listDisplayDiv?.innerText = todo
+  if (listDisplayDiv && todo) {
+    const newTodoElement = document.createElement("p");
+    newTodoElement.innerText = todo;
+    
+    newTodoElement.classList.add("todoItem");
+
+    listDisplayDiv?.appendChild(newTodoElement);
   }
   
   console.log(todo)
