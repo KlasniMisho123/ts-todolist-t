@@ -1,7 +1,6 @@
 import './style.css'
 import emailLogo from '../public/email.png'
 import axios from "axios"
-// import { setupCounter } from './counter.ts'
 
 const bodyElement = document.body as HTMLBodyElement;
 const emailFromElement = document.querySelector<HTMLInputElement>(".email-from")
@@ -20,7 +19,6 @@ bodyElement.addEventListener("keypress", (e) => {
   }
 })
 
-// setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
 function resetInputValues() {
   if(emailFromElement  && emailSubjectElement && emailTextElement) {
     emailFromElement.value = ""
@@ -58,7 +56,7 @@ async function sendApiRequiest() {
   }
 }
 
-const randomTitle = sendApiRequiest()
+const randomTitle =  await sendApiRequiest()
 
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
@@ -73,7 +71,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <button id="counter" type="button">Send Email</button>
     </div>
     <p class="read-the-docs">
-      "Random Title: "${randomTitle}
+      Random Title: ${randomTitle}
     </p>
   </div>
 `
