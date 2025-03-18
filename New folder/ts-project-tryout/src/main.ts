@@ -1,5 +1,6 @@
 import './style.css'
 import emailLogo from '../public/email.png'
+
 // import { setupCounter } from './counter.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
@@ -14,7 +15,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <button id="counter" type="button">Send Email</button>
     </div>
     <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
+      "Random Title: "
     </p>
   </div>
 `
