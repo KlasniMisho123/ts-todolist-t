@@ -2,7 +2,6 @@ import './style.css'
 import emailLogo from '../public/email.png'
 import axios from "axios"
 
-const randomTitle =  await sendApiRequiest()
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
@@ -15,8 +14,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
       <button id="send-email-btn" type="button">Send Email</button>
     </div>
-    <p class="read-the-docs">
-      Random Title: ${randomTitle}
+    <p class="read-the-docs"> 
     </p>
   </div>
 `
@@ -72,7 +70,6 @@ async function handleSubmit(from: string, subject: string, text: string) {
   } finally {
     resetInputValues()
   }
-  
 }
 
 async function sendApiRequiest() {
@@ -82,9 +79,16 @@ async function sendApiRequiest() {
     const response = await axios.get(apiAdress)
     const responseData = response.data
 
-    return (responseData[randomNumber].title)
 
+    const randomTitle =` Random Title: ${responseData[randomNumber].title}`
+    const randomTitleElement = document.querySelector<HTMLParagraphElement>(".read-the-docs")
+
+    if (randomTitleElement) {
+      randomTitleElement.append(randomTitle);
+    }
   } catch(err){
     return ("Api Err")
   }
 }
+
+sendApiRequiest()
