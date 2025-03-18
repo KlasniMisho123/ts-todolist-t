@@ -1,24 +1,7 @@
 import './style.css'
 import emailLogo from '../public/email.png'
-
+import axios from "axios"
 // import { setupCounter } from './counter.ts'
-
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <img src="${emailLogo}" class="logo" alt="Vite logo" />
-    <h1>Email Form</h1>
-    <div class="card">
-      <input class="email-from email-form-input " placeholder="From"/>
-      <input class="email-subject email-form-input" placeholder="Subject"/>
-      <textarea class="email-text email-form-input" placeholder="text"> </textarea>
-
-      <button id="counter" type="button">Send Email</button>
-    </div>
-    <p class="read-the-docs">
-      "Random Title: "
-    </p>
-  </div>
-`
 
 const bodyElement = document.body as HTMLBodyElement;
 const emailFromElement = document.querySelector<HTMLInputElement>(".email-from")
@@ -60,3 +43,37 @@ async function handleSubmit(from: string, subject: string, text: string) {
   }
   
 }
+
+async function sendApiRequiest() {
+  let randomNumber = Math.floor(Math.random() * 99)
+  try {
+    const apiAdress = "https://jsonplaceholder.typicode.com/posts"
+    const response = await axios.get(apiAdress)
+    const responseData = response.data
+
+    return (responseData[randomNumber].title)
+
+  } catch(err){
+    return ("Api Err")
+  }
+}
+
+const randomTitle = sendApiRequiest()
+
+
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+  <div>
+    <img src="${emailLogo}" class="logo" alt="Vite logo" />
+    <h1>Email Form</h1>
+    <div class="card">
+      <input class="email-from email-form-input " placeholder="From"/>
+      <input class="email-subject email-form-input" placeholder="Subject"/>
+      <textarea class="email-text email-form-input" placeholder="text"> </textarea>
+
+      <button id="counter" type="button">Send Email</button>
+    </div>
+    <p class="read-the-docs">
+      "Random Title: "${randomTitle}
+    </p>
+  </div>
+`
