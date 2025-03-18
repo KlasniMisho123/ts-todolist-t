@@ -46,12 +46,28 @@ h1 {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 60%;
+  margin: 0 auto;
   padding: 2em;
   display: flex;
   justify-content: center;
   border: solid gray 1px;
   border-radius: 8px;
-  filter: drop-shadow(0 0 2em #646cffaa)
+}
+
+.email-form-input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 12px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  max-width: 97%;
+  max-height: 150px;
 }
 
 .read-the-docs {
