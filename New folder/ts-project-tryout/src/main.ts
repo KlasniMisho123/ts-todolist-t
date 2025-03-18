@@ -6,6 +6,22 @@ const bodyElement = document.body as HTMLBodyElement;
 const emailFromElement = document.querySelector<HTMLInputElement>(".email-from")
 const emailSubjectElement = document.querySelector<HTMLInputElement>(".email-subject")
 const emailTextElement = document.querySelector<HTMLInputElement>(".email-text")
+const sendEmailBtnElement = document.querySelector<HTMLButtonElement>("#send-email-btn")
+
+sendEmailBtnElement?.addEventListener("click", () => {
+  // Check if all input elements are available
+  if (emailFromElement && emailSubjectElement && emailTextElement) {
+    // Get the values from the email input fields
+    let emailFrom = emailFromElement.value;
+    let emailSubject = emailSubjectElement.value;
+    let emailText = emailTextElement.value;
+
+    // Call the handleSubmit function with the values
+    handleSubmit(emailFrom, emailSubject, emailText);
+  } else {
+    console.error("Email input fields are not available.");
+  }
+});
 
 bodyElement.addEventListener("keypress", (e) => {
   if(e.key === "Enter") {
@@ -68,7 +84,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <input class="email-subject email-form-input" placeholder="Subject"/>
       <textarea class="email-text email-form-input" placeholder="text"> </textarea>
 
-      <button id="counter" type="button">Send Email</button>
+      <button id="send-email-btn" type="button">Send Email</button>
     </div>
     <p class="read-the-docs">
       Random Title: ${randomTitle}
